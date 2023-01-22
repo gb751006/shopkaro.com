@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="icon" href="shopee-logo-shop-with-the-gentlemen-collection-and-win-the-shopee-0.png"/>
+    <style>
+      table {
+        border-collapse: collapse;
+         width: 85%;
+         margin: auto;
+         margin-top: 25px;
+         margin-bottom: 80px;
+    }
+
+      th, td {
+     text-align: left;
+     padding: 8px;
+     
+   }
+
+   th{
+       background-color: #3b4344;
+       color: white;
+       font-family: sans-serif;
+
+   }
+   td{
+       border: 1px solid grey;
+       font-family: sans-serif;
+
+   }
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+#headerdiv{
+    height: 70px;
+    width: 100%;
+    border: 1px solid transparent;
+    background-color:#25A3B4;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+#headerdiv>div{
+    height: 40px;
+    width: 600px;
+    border: 1px solid transparent;
+    margin: auto;
+    margin-top: 15px;
+    padding-left: 80px;
+}
+
+
+/* Footer */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EFF6FB;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+  }
+
+/* Footer End*/
+
+    </style>
+  </head>
+  <body>
+    <div id="headerdiv"><div>SHOPCLUES PRODUCT DETAILS</div></div>
+    <div id="container">
+     
+    <div id="tableDiv">
+      <table>
+        <thead>
+          <tr>
+            <th >Name</th>
+            <th>Image URL</th>
+            <th>MRP</th>
+            <th>Discount</th>
+            <th>Color Family</th>
+            <th>Brand</th>
+            <th>Size</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+     <!-- Footer -->
+
+     <div class="footer">
+        <p>Made with &hearts; and care</p>
+      </div>
+
+    <!-- Footer -->
+
+
+
+  </body>
+</html>
+<script>
+
+
+
+  var arr = JSON.parse(localStorage.getItem("lsproductdetails")) || [];
+  displayTable(arr);
+  
+
+
+  function displayTable(arr) {
+    document.querySelector("tbody").innerHTML = "";
+    arr.map(function (element, index) {
+
+        //Create tag
+      var row = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.textContent = element.name;
+      var td2 = document.createElement("td");
+      td2.textContent = element.imgURL;
+      var td3 = document.createElement("td");
+      td3.textContent = element.mrp;
+      var td4 = document.createElement("td");
+      td4.textContent = element.discount;
+      var td5 = document.createElement("td");
+      td5.textContent = element.color_family;
+      var td6 = document.createElement("td");
+      td6.textContent = element.brand;
+      var td7 = document.createElement("td");
+      td7.textContent = element.size;
+
+      var td8 = document.createElement("td");
+      td8.textContent = "Delete";
+
+      td8.addEventListener("click", function () {
+        deleteRow(index);
+      });
+
+      row.append(td1, td2, td3, td4, td5, td6, td7, td8);
+      document.querySelector("tbody").append(row);
+    });
+  }
+  function deleteRow(index) {
+    arr.splice(index, 1);
+    localStorage.setItem("lsproductdetails", JSON.stringify(arr));
+    displayTable(arr);
+  }
+  
+</script>

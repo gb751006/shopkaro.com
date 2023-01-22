@@ -1,0 +1,151 @@
+
+/* Header */
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+#headerdiv{
+    height: 70px;
+    width: 100%;
+    border: 1px solid transparent;
+    background-color:#25A3B4;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+#headerdiv>div{
+    height: 40px;
+    width: 388px;
+    border: 1px solid transparent;
+    margin: auto;
+    margin-top: 15px;
+}
+
+/* Header end*/
+
+/* body */
+#bodydiv{
+    display: grid;
+    grid-template: 630px / 20% 40% 40%;
+}
+
+#bodydiv>div{
+    border: 2px solid grey;
+}
+
+
+/* Button section */
+
+#bodydiv>div:nth-child(1){
+    display: grid;
+    grid-template: 90px 7px 64px 64px 64px /100%;
+}
+
+#bodydiv>div:nth-child(1)>div{
+    border: 1px solid transparent;
+}
+
+#bodydiv>div:nth-child(1)>div:nth-child(2){
+    background-color: grey;
+}
+#bodydiv>div:nth-child(1)>div:nth-child(1){
+    font-family: sans-serif;
+    font-weight:bold;
+    color: black;
+    font-size: 20px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.divbtn{
+    display: grid;
+    grid-template: 80% / 93%;
+    justify-content: center;
+    align-content: center;
+   
+}
+
+.divbtn>div{
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #25A3B4;
+    font-family: sans-serif;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+/* Button section End */
+
+
+/* Add Product Section */
+#addproduct{
+    padding: 50px;
+    padding-top: 15px;
+}
+h1{
+    font-family: sans-serif;
+    margin: auto;
+    margin-bottom: 15px;
+   
+}
+
+#addproductfrm{
+    display: flex;
+    flex-direction: column;
+}
+
+.inptag{
+    height: 27px;
+    margin-bottom: 15px;
+}
+
+.seltag{
+    size: 27px;
+}
+
+.leb{
+    font-family: sans-serif;
+    margin-bottom: 3px;
+}
+
+input[type = "submit"]{
+    height: 35px;
+    margin-top: 15px;
+    border: 2px solid rgb(0, 0, 0);
+    font-family: sans-serif;
+    background-color: #25A3B4;
+    color: white;
+    font-weight: bold;
+    
+}
+
+
+
+/* Add Product Section  End*/
+
+/* Footer */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EFF6FB;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+    
+
+  }
+
+/* Footer End*/
